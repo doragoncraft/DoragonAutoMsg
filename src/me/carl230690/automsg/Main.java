@@ -26,19 +26,19 @@ public class Main extends JavaPlugin
     {
       public void run() {
         String prefix = "[" + ChatColor.LIGHT_PURPLE + Main.this.getConfig().getString("prefix") + ChatColor.WHITE + "] " + ChatColor.GREEN;
-        if (Main.timeInSeconds == 900) {
+        if (Main.timeInSeconds == 4500) {
           Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message1"));
         }
-        if (Main.timeInSeconds == 720) {
+        if (Main.timeInSeconds == 3600) {
           Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message2"));
         }
-        if (Main.timeInSeconds == 540) {
+        if (Main.timeInSeconds == 2700) {
           Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message3"));
         }
-        if (Main.timeInSeconds == 360) {
+        if (Main.timeInSeconds == 1800) {
           Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message4"));
         }
-        if (Main.timeInSeconds == 180) {
+        if (Main.timeInSeconds == 900) {
           Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message5"));
         }
         if (Main.timeInSeconds == 0) {
