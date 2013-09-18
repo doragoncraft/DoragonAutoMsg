@@ -1,15 +1,10 @@
 package me.carl230690.automsg;
 
-import java.util.logging.Logger;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Server;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.FileConfigurationOptions;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scheduler.BukkitScheduler;
 
 public class Main extends JavaPlugin
 {
@@ -20,29 +15,28 @@ public class Main extends JavaPlugin
   {
     getLogger().info("DAM has been enabled!");
     timeInSeconds = 900;
-    getConfig().options().copyDefaults(true);
-    saveConfig();
+    this.saveDefaultConfig();
     getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable()
     {
       public void run() {
         String prefix = "[" + ChatColor.LIGHT_PURPLE + Main.this.getConfig().getString("prefix") + ChatColor.WHITE + "] " + ChatColor.GREEN;
         if (Main.timeInSeconds == 4500) {
-          Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message1"));
+          Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message1").replaceAll("(&([a-f0-9]))", "\u00A7$2"));
         }
         if (Main.timeInSeconds == 3600) {
-          Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message2"));
+          Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message2").replaceAll("(&([a-f0-9]))", "\u00A7$2"));
         }
         if (Main.timeInSeconds == 2700) {
-          Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message3"));
+          Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message3").replaceAll("(&([a-f0-9]))", "\u00A7$2"));
         }
         if (Main.timeInSeconds == 1800) {
-          Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message4"));
+          Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message4").replaceAll("(&([a-f0-9]))", "\u00A7$2"));
         }
         if (Main.timeInSeconds == 900) {
-          Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message5"));
+          Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message5").replaceAll("(&([a-f0-9]))", "\u00A7$2"));
         }
         if (Main.timeInSeconds == 0) {
-          Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message6"));
+          Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message6").replaceAll("(&([a-f0-9]))", "\u00A7$2"));
           Main.timeInSeconds = 1080;
         }
         if (Main.timeInSeconds > 0)
@@ -64,6 +58,7 @@ public class Main extends JavaPlugin
       if (sender.hasPermission("dam.bcast")) {
         if (args.length == 0) {
           sender.sendMessage(ChatColor.RED + "Usage: /dambcast (message)");
+          Bukkit.broadcastMessage(Main.this.getConfig().getString("messages.message1").replaceAll("(&([a-f0-9]))", "\u00A7$2"));
           return true;
         }if (args.length > 0) {
           StringBuilder sb = new StringBuilder();

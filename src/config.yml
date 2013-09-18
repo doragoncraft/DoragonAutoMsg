@@ -1,11 +1,16 @@
+  #---IMPORTANT---
+  # Quotation marks must be escaped!
+  # example:
+  # message1: 'Don''t forget to have fun!'
+
 prefix: DAM
 messages:
-  message1: /Vote for the 5 vote pages and get altogether 20 Diamonds $500 and 50 exp levels & 1 Horse egg'
-  message2: like our server? Want more perks? Why not take a look at our donations, we are always adding more to them so check back often! Go here http://doragoncraft.com/donate to take a look
-  message3: Wanna show off your mad building skills? Sign up for build Competition here http://www.doragoncraft.com/forums/m/15872115/viewthread/8709695-build-comp-signups
-  message4: Build Competition Starts September 22! Be sure to signup! Don't want to build? You can be a judge! To signup to be a judge, use /mail angelyna19 I want to be a judge!
-  message5: Doragon Auto Msg (DAM) is being worked on at the moment!
-  message6: New Stuff Coming Soon! Keep A Eye On The Forums
+  message1: '&4/Vote for the 5 vote pages and get altogether 20 Diamonds $500 and 50 exp levels & 1 Horse egg'
+  message2: '&4like our server? Want more perks? Why not take a look at our donations, we are always adding more to them so check back often! Go here http://doragoncraft.com/donate to take a look'
+  message3: '&4Wanna show off your mad building skills? Sign up for build Competition here http://www.doragoncraft.com/forums/m/15872115/viewthread/8709695-build-comp-signups'
+  message4: '&4Build Competition Starts September 22! Be sure to signup! Don''t want to build? You can be a judge! To signup to be a judge, use /mail angelyna19 I want to be a judge!'
+  message5: '&4Doragon &6Auto Msg (DAM) is being worked on at the moment!'
+  message6: '&4New Stuff Coming Soon! Keep A Eye On The Forums'
 
   #---Commands---
   #
