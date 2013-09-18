@@ -1,0 +1,32 @@
+name: DoragonAutoMessage
+main: me.carl230690.automsg.Main
+version: 1.0
+website: http://www.doragoncraft.com/
+author: carl230690
+description: >
+                    Doragon Auto Msg
+commands:
+  damstop:
+    description: Stops the Auto Msg
+    usage: /<command>
+  damstart:
+    description: Starts the Auto Broadcaster over again!
+    usage: /<command>
+    permission: dam.start
+  dam:
+    description: dam Info
+    usage: /<command>
+    permission: dam.mb
+  dambcast:
+    description: Broadcast a message to the server!
+    permission: dam.bcast
+permissions:
+  dam.stop:
+    description: Permission to use /damstop
+    default: op
+  dam.mb:
+    description: Permission broadcast a message
+    default: op
+  dam.start:
+    description: Permission to restart the Auto msg
+    default: op
