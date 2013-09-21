@@ -14,33 +14,37 @@ public class Main extends JavaPlugin
   public void onEnable()
   {
     getLogger().info("DAM has been enabled!");
-    timeInSeconds = 900;
+    timeInSeconds = 1;
     this.saveDefaultConfig();
     getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable()
     {
       public void run() {
         String prefix = "[" + ChatColor.LIGHT_PURPLE + Main.this.getConfig().getString("prefix") + ChatColor.WHITE + "] " + ChatColor.GREEN;
-        if (Main.timeInSeconds == 4500) {
+        
+        int inc = Main.this.getConfig().getInt("increment");
+        
+        
+        if (Main.timeInSeconds == inc) {
           Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message1").replaceAll("(&([a-f0-9]))", "\u00A7$2"));
         }
-        if (Main.timeInSeconds == 3600) {
+        if (Main.timeInSeconds == 2*inc) {
           Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message2").replaceAll("(&([a-f0-9]))", "\u00A7$2"));
         }
-        if (Main.timeInSeconds == 2700) {
+        if (Main.timeInSeconds == 3*inc) {
           Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message3").replaceAll("(&([a-f0-9]))", "\u00A7$2"));
         }
-        if (Main.timeInSeconds == 1800) {
+        if (Main.timeInSeconds == 4*inc) {
           Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message4").replaceAll("(&([a-f0-9]))", "\u00A7$2"));
         }
-        if (Main.timeInSeconds == 900) {
+        if (Main.timeInSeconds == 5*inc) {
           Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message5").replaceAll("(&([a-f0-9]))", "\u00A7$2"));
         }
-        if (Main.timeInSeconds == 0) {
+        if (Main.timeInSeconds == 6*inc) {
           Bukkit.broadcastMessage(prefix + Main.this.getConfig().getString("messages.message6").replaceAll("(&([a-f0-9]))", "\u00A7$2"));
-          Main.timeInSeconds = 1080;
+          Main.timeInSeconds = 1;
         }
         if (Main.timeInSeconds > 0)
-          Main.timeInSeconds -= 1;
+        	timeInSeconds = timeInSeconds + 1;
       }
     }
     , 20L, 20L);

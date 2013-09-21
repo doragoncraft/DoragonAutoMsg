@@ -11,6 +11,10 @@ messages:
   message4: '&4Build Competition Starts September 22! Be sure to signup! Don''t want to build? You can be a judge! To signup to be a judge, use /mail angelyna19 I want to be a judge!'
   message5: '&4Doragon &6Auto Msg (DAM) is being worked on at the moment!'
   message6: '&4New Stuff Coming Soon! Keep A Eye On The Forums'
+  
+  
+  #Time increment is in seconds!
+increment: 900
 
   #---Commands---
   #
